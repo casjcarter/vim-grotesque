@@ -1,33 +1,8 @@
 " Vim Color File
-" Name:       pencil.vim
-" Version:    0.6
-" Maintainer: github.com/reedes github.com/mattly
+" Name:       grotesque.vim
+" Version:    0.1
+" Maintainer: github.com/casjcarter
 " License:    The MIT License (MIT)
-
-" Original iA Writer colors, to use as a guide
-" White           #F1F1F1
-" OffWhiteIPad    #F5F2EC
-" OffWhiteDemo    #F9F8F4
-" Cursor          #20BBFC
-" Selection       #B6D6FD
-" SelectionNOS    #D4D4D4
-" StatusBar       #EDEDED
-" StatusBarBorder #D9D9D9   used for search too
-" Text            #424242
-" Blue            #B5D6FD
-" Green           #30C798
-" Blue2           #1DAEE4
-" gray            #999999
-" Red             #E32791
-" UnfocusedText   #B8B8B8
-" MenuSelected    #2C81FB
-" MenuUnSelected  #545454
-" MenuText        #F1F1F1
-" LightKeyBg      #4B4B4B
-" DarkKeyBg       #262626
-" NearBlack       #181818
-" SyntaxButton    #363738
-" SearchHighlight #F3E430  yellow
 
 hi clear
 
@@ -35,31 +10,31 @@ if exists('syntax on')
     syntax reset
 endif
 
-let g:colors_name='pencil'
+let g:colors_name='grotesque'
 
-if ! exists("g:pencil_higher_contrast_ui")
-  let g:pencil_higher_contrast_ui = 0
+if ! exists("g:grotesque_higher_contrast_ui")
+  let g:grotesque_higher_contrast_ui = 0
 endif
 
-if ! exists("g:pencil_neutral_code_bg")
-  let g:pencil_neutral_code_bg = 0
+if ! exists("g:grotesque_neutral_code_bg")
+  let g:grotesque_neutral_code_bg = 0
 endif
 
-if ! exists("g:pencil_neutral_headings")
-  let g:pencil_neutral_headings = 0
+if ! exists("g:grotesque_neutral_headings")
+  let g:grotesque_neutral_headings = 0
 endif
 
 " not all terminals support italics properly.  If yours does, opt-in.
-if ! exists("g:pencil_terminal_italics")
-  let g:pencil_terminal_italics = 0
+if ! exists("g:grotesque_terminal_italics")
+  let g:grotesque_terminal_italics = 0
 endif
 
-if ! exists("g:pencil_spell_undercurl")
-  let g:pencil_spell_undercurl = 1
+if ! exists("g:grotesque_spell_undercurl")
+  let g:grotesque_spell_undercurl = 1
 endif
 
-if ! exists("g:pencil_gutter_color")
-  let g:pencil_gutter_color = 0
+if ! exists("g:grotesque_gutter_color")
+  let g:grotesque_gutter_color = 0
 endif
 
 " Colors
@@ -70,7 +45,7 @@ let s:actual_white    = { "gui": "#FFFFFF", "cterm": "231" }
 let s:light_black     = { "gui": "#424242", "cterm": "8"   }
 let s:lighter_black   = { "gui": "#545454", "cterm": "240" }
 
-if g:pencil_higher_contrast_ui == 0
+if g:grotesque_higher_contrast_ui == 0
   " darker shadow and whiter grays
   let s:subtle_black  = { "gui": "#262626", "cterm": "235" }
   let s:light_gray    = { "gui": "#D9D9D9", "cterm": "253" }
@@ -127,7 +102,7 @@ else
   let s:visual          = s:light_blue
 endif
 
-if g:pencil_neutral_headings == 1
+if g:grotesque_neutral_headings == 1
   let s:head_a         = s:norm
   let s:head_b         = s:norm
   let s:head_c         = s:norm
@@ -137,13 +112,13 @@ else
   let s:head_c         = s:dark_cyan
 endif
 
-if g:pencil_neutral_code_bg == 1
+if g:grotesque_neutral_code_bg == 1
   let s:code_bg        = s:bg
 else
   let s:code_bg        = s:bg_very_subtle
 endif
 
-if g:pencil_spell_undercurl == 1
+if g:grotesque_spell_undercurl == 1
   let s:sp_un      = 'undercurl'
 else
   let s:sp_un      = 'underline'
@@ -152,7 +127,7 @@ endif
 " shamelessly stolen from hemisu: https://github.com/noahfrederick/vim-hemisu/
 function! s:h(group, style)
   " Not all terminals support italics properly. If yours does, opt-in.
-  if g:pencil_terminal_italics == 0 && has_key(a:style, "cterm") && a:style["cterm"] == "italic"
+  if g:grotesque_terminal_italics == 0 && has_key(a:style, "cterm") && a:style["cterm"] == "italic"
     unlet a:style.cterm
   endif
   execute "highlight" a:group
@@ -364,7 +339,7 @@ hi! link xmlEndTag                  xmlTag
 hi! link xmlTagName                 htmlTagName
 
 " Signify, git-gutter
-if g:pencil_gutter_color == 1
+if g:grotesque_gutter_color == 1
   hi link SignifySignAdd              DiffAdd
   hi link SignifySignDelete           DiffDelete
   hi link SignifySignChange           DiffChange
